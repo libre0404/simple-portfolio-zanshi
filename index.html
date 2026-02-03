@@ -1,67 +1,59 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-    <title>免费 WiFi · 矿泉水零食自助购买</title>
-    <link rel="icon" href="img/favicon.png" />
-    <!-- 样式保持原结构 -->
-    <link rel="stylesheet" href="css/reset.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>John Sample</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/media.css" />
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
 
   <body>
-    <!-- 预加载：保持原逻辑 -->
-    <div id="preloader">
-      <div class="jumping-dots">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-
-    <!-- 返回顶部按钮 -->
-    <div class="goToTop" id="goToTop">
-      <a href="#home">
-        <img src="img/icons/arrow-up.svg" alt="Go to top" />
-      </a>
-    </div>
-
-    <!-- HEADER 保留原结构，改文案 -->
-    <header class="header" id="header">
-      <div class="header-nav container container-lg">
-        <a href="#home" class="logo">WiFi 便利店</a>
-
-        <nav id="nav" class="nav">
-          <ul class="nav-list">
-            <li class="nav-item">
-              <a href="#home" class="nav-link active">首页</a>
-            </li>
-            <li class="nav-item">
-              <a href="#products" class="nav-link">商品</a>
-            </li>
-            <li class="nav-item">
-              <a href="#about" class="nav-link">关于</a>
-            </li>
-            <li class="nav-item">
-              <a href="#contact" class="nav-link">联系</a>
-            </li>
-          </ul>
-        </nav>
-
-        <button class="nav-btn" id="nav-btn" aria-label="Toggle navigation">
-          <img src="img/icons/menu.svg" alt="Open menu" id="nav-btn-open" />
-          <img src="img/icons/close.svg" alt="Close menu" id="nav-btn-close" />
-        </button>
+    <header id="header" class="header">
+      <div class="container container-lg">
+        <div class="header-nav">
+          <a
+            href="#home"
+            class="logo"
+            data-aos="fade-down"
+            data-aos-duration="1000"
+            >J.Sample</a
+          >
+          <nav id="nav" class="nav">
+            <ul class="nav-list" data-aos="fade-down" data-aos-duration="1000">
+              <li class="nav-item">
+                <a href="#home" class="nav-link active">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="#about" class="nav-link">About</a>
+              </li>
+              <li class="nav-item">
+                <a href="#projects" class="nav-link">Works</a>
+              </li>
+              <li class="nav-item">
+                <a href="#contact" class="nav-link">Contact</a>
+              </li>
+            </ul>
+            <button id="nav-btn" class="nav-btn">
+              <img
+                id="nav-btn-img"
+                src="img/icons/open.svg"
+                alt="Navigation button"
+              />
+            </button>
+          </nav>
+        </div>
       </div>
     </header>
 
-    <!-- HERO：WiFi + 主推商品区 -->
     <section id="home" class="hero">
       <div class="container container-lg">
         <div
@@ -72,285 +64,383 @@
           data-aos-duration="1000"
         >
           <div class="hero-content">
-            <p class="hero-greeting">欢迎使用免费 WiFi</p>
-            <h1 class="hero-heading">
-              <span>WiFi 密码：</span>
-              <span class="wifi-password">12345678</span>
-            </h1>
-            <p class="hero-heading-subtitle">
-              一边上网，一边喝冰水、吃零食。微信扫码即可购买，店主马上送到你座位。
-            </p>
+            <span class="hero-greeting"> Hello, I am</span>
+            <h1 class="hero-heading">John Sample</h1>
+            <span class="hero-heading-subtitle"
+              >UI/UX Designer & Software Developer</span
+            >
+            <div class="about-social-list">
+              <div class="social-links-row">
+                <a href="#!">
+                  <img
+                    src="img/social_icons/github.svg"
+                    alt="Link to GitHub account"
+                  />
+                </a>
 
-            <div class="social-links-row">
-              <!-- 这里放一个“微信购买”按钮 -->
-              <a
-                href="weixin://dl/chat?你的微信号"
-                class="social-link"
-              >
-                微信联系客服购买
-              </a>
+                <a href="#!">
+                  <img
+                    src="img/social_icons/linkedin.svg"
+                    alt="Link to linkedin profile"
+                  />
+                </a>
+
+                <a href="#!">
+                  <img
+                    src="img/social_icons/xing.svg"
+                    alt="Link to Xing profile"
+                  />
+                </a>
+
+                <a href="#!">
+                  <img
+                    src="img/social_icons/facebook.svg"
+                    alt="Link to facebook profile"
+                /></a>
+                <a href="#!">
+                  <img
+                    src="img/social_icons/instagram.svg"
+                    alt="Link to instagram profile"
+                /></a>
+              </div>
             </div>
 
-            <div class="about-social-list">
-              <p>推荐：农夫山泉、怡宝、薯片、巧克力 等。</p>
+            <div>
+              <a href="#projects" class="btn">My Portfolio</a>
+              <a href="#contact" class="btn btn-white">Contact Me</a>
             </div>
           </div>
-
           <div class="hero-img">
-            <!-- 这张是你自己的展示图，放在 images/ 下 -->
             <img
-              src="images/wifi-store.jpg"
-              alt="WiFi便利店"
-              width="480"
-              height="480"
+              src="img/hero/hero.png"
+              alt="Picture of Christian Buehner taken from Unsplash</a>
+              "
             />
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ABOUT：改为店铺简介 -->
     <section id="about" class="about">
       <div class="container">
-        <h2 class="title">关于 WiFi 便利店</h2>
-
+        <div class="about-title">
+          <h2 class="title">About Me</h2>
+        </div>
         <div class="about-row">
-          <div class="about-col">
+          <div
+            class="about-content"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
             <p class="about-descr">
-              这里是你的私人小卖部：提供冰镇矿泉水、各类零食，支持微信支付。你只需要通过页面下单，我们会尽快送到你桌上。
+              Hi, I’m John Sample, a passionate designer and developer
+              specializing in web development, graphic design and photography.
+              With over 10 years of experience, I love transforming ideas into
+              impactful creations that connect and inspire. Outside of work, I
+              enjoy exploring new places, learning new skills and capturing
+              life’s moments. <br /><br />Let’s collaborate and bring your
+              vision to life!
             </p>
-            <p class="about-descr">
-              适合自习室、办公室、网咖、培训班等场景：用户连接 WiFi 后，自动跳转到这个页面，一键下单即可。
-            </p>
-            <a href="#products" class="btn btn-red about-download-btn">
-              查看全部商品
-            </a>
+            <div class="about-download-btn">
+              <a href="#!" class="btn btn-white">Download CV</a>
+            </div>
           </div>
-
-          <div class="about-col">
+          <div
+            class="about-skills"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="100"
+          >
             <div class="skill">
-              <p class="skill-title">矿泉水供应</p>
-              <p class="skill-percent">100%</p>
+              <div class="skill-title">Web Design</div>
+              <div class="skill-percent">95%</div>
               <div class="skill-bar__progress">
-                <div class="skill-bar__fill" style="width: 100%"></div>
+                <div class="skill-bar__fill" data-progress="95"></div>
               </div>
             </div>
-
             <div class="skill">
-              <p class="skill-title">零食种类</p>
-              <p class="skill-percent">80%</p>
+              <div class="skill-title">HTML/CSS</div>
+              <div class="skill-percent">90%</div>
               <div class="skill-bar__progress">
-                <div class="skill-bar__fill" style="width: 80%"></div>
+                <div class="skill-bar__fill" data-progress="90"></div>
               </div>
             </div>
-
             <div class="skill">
-              <p class="skill-title">平均送货时间</p>
-              <p class="skill-percent">&lt; 3 分钟</p>
+              <div class="skill-title">JavaScript</div>
+              <div class="skill-percent">65%</div>
               <div class="skill-bar__progress">
-                <div class="skill-bar__fill" style="width: 90%"></div>
+                <div class="skill-bar__fill" data-progress="65"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill-title">Photoshop</div>
+              <div class="skill-percent">80%</div>
+              <div class="skill-bar__progress">
+                <div class="skill-bar__fill" data-progress="80"></div>
               </div>
             </div>
           </div>
         </div>
-
-        <!-- Services：用来展示场景说明 -->
         <div class="services-row">
-          <div class="service-card">
-            <img
-              src="img/services/coffee.svg"
-              alt=""
-              class="service-card-img"
-            />
-            <h3 class="service-card-title">自习室/培训班</h3>
-            <p>学生扫码连 WiFi 自动看到售卖页，老师不用分心卖水收钱。</p>
+          <div
+            class="service-card"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="50"
+          >
+            <img class="service-card-img" src="img/services/01.svg" alt="" />
+            <h3 class="service-card-title">UI/UX Design</h3>
+            <p>
+              Crafting intuitive and visually appealing user interfaces that
+              enhance experiences through thoughtful, creative designs.
+            </p>
           </div>
-          <div class="service-card">
-            <img
-              src="img/services/design.svg"
-              alt=""
-              class="service-card-img"
-            />
-            <h3 class="service-card-title">办公室</h3>
-            <p>同事口渴、嘴馋，打开 WiFi 页就能下单，解决临时口粮问题。</p>
+
+          <div
+            class="service-card"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="200"
+          >
+            <img class="service-card-img" src="img/services/02.svg" alt="" />
+            <h3 class="service-card-title">Frontend Development</h3>
+            <p>
+              Developing responsive, accessible, and dynamic websites using
+              modern tools to create seamless, engaging experiences.
+            </p>
           </div>
-          <div class="service-card">
-            <img
-              src="img/services/website.svg"
-              alt=""
-              class="service-card-img"
-            />
-            <h3 class="service-card-title">网咖/电竞</h3>
-            <p>游戏中不想走开，用手机扫码下单，饮料零食送到机位。</p>
+
+          <div
+            class="service-card"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="500"
+          >
+            <img class="service-card-img" src="img/services/03.svg" alt="" />
+            <h3 class="service-card-title">Content Writing</h3>
+            <p>
+              Creating compelling and audience-focused content that effectively
+              communicates ideas and delivers meaningful value.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PRODUCTS：商品展示（全部使用 images/，不动原 img/） -->
-    <section id="products" class="projects">
+    <section id="projects" class="projects">
       <div class="container container-lg">
         <div class="projects-title">
-          <h2 class="title">商品列表</h2>
+          <h2 class="title">Works</h2>
         </div>
 
         <div class="projects-row">
-          <!-- 商品 1：农夫山泉 -->
-          <div class="project-box">
-            <a href="images/shuijingshui1.jpg">
-              <img
-                class="project-img"
-                src="images/shuijingshui1.jpg"
-                alt="农夫山泉"
-              />
+          <div
+            class="project-box"
+            data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-out"
+            data-aos-duration="1000"
+          >
+            <a href="#!">
+              <img class="project-img" src="img/works/01.jpg" alt="" />
               <div class="project-mask">
                 <div class="project-caption">
-                  <h5 class="white">农夫山泉矿泉水</h5>
-                  <p>550ml 冰镇 · ¥3</p>
-                  <a
-                    href="weixin://dl/chat?你的微信号"
-                    class="btn btn-red"
-                    style="margin-top: 10px"
-                    >微信购买</a
-                  >
+                  <h5 class="white">Finance Dashboard</h5>
+                  <p class="white">UI/UX Design</p>
                 </div>
               </div>
             </a>
           </div>
-
-          <!-- 商品 2：怡宝 -->
-          <div class="project-box">
-            <a href="images/shuijingshui2.jpg">
-              <img
-                class="project-img"
-                src="images/shuijingshui2.jpg"
-                alt="怡宝"
-              />
+          <div
+            class="project-box"
+            data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-out"
+            data-aos-delay="300"
+            data-aos-duration="1000"
+          >
+            <a href="#!">
+              <img class="project-img" src="img/works/02.jpg" alt="" />
               <div class="project-mask">
                 <div class="project-caption">
-                  <h5 class="white">怡宝矿泉水</h5>
-                  <p>500ml 常温 · ¥3</p>
-                  <a
-                    href="weixin://dl/chat?你的微信号"
-                    class="btn btn-red"
-                    style="margin-top: 10px"
-                    >微信购买</a
-                  >
+                  <h5 class="white">Product design</h5>
+                  <p class="white">UI/UX Design</p>
                 </div>
               </div>
             </a>
           </div>
-
-          <!-- 商品 3：薯片 -->
-          <div class="project-box">
-            <a href="images/lingshi1.jpg">
-              <img
-                class="project-img"
-                src="images/lingshi1.jpg"
-                alt="薯片"
-              />
+          <div
+            class="project-box"
+            data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-out"
+            data-aos-delay="600"
+            data-aos-duration="1000"
+          >
+            <a href="#!">
+              <img class="project-img" src="img/works/03.jpg" alt="" />
               <div class="project-mask">
                 <div class="project-caption">
-                  <h5 class="white">乐事薯片</h5>
-                  <p>原味 60g · ¥8</p>
-                  <a
-                    href="weixin://dl/chat?你的微信号"
-                    class="btn btn-red"
-                    style="margin-top: 10px"
-                    >微信购买</a
-                  >
+                  <h5 class="white">Landing Page</h5>
+                  <p class="white">UI/UX Design, Web Development</p>
                 </div>
               </div>
             </a>
           </div>
-
-          <!-- 商品 4：巧克力 -->
-          <div class="project-box">
-            <a href="images/lingshi2.jpg">
-              <img
-                class="project-img"
-                src="images/lingshi2.jpg"
-                alt="巧克力"
-              />
+          <div
+            class="project-box"
+            data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-out"
+            data-aos-delay="900"
+            data-aos-duration="1000"
+          >
+            <a href="#!">
+              <img class="project-img" src="img/works/04.jpg" alt="" />
               <div class="project-mask">
                 <div class="project-caption">
-                  <h5 class="white">德芙巧克力</h5>
-                  <p>牛奶味 40g · ¥12</p>
-                  <a
-                    href="weixin://dl/chat?你的微信号"
-                    class="btn btn-red"
-                    style="margin-top: 10px"
-                    >微信购买</a
-                  >
+                  <h5 class="white">Portfolio</h5>
+                  <p class="white">Web Development</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div
+            class="project-box"
+            data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-out"
+            data-aos-delay="1200"
+            data-aos-duration="1000"
+          >
+            <a href="#!">
+              <img class="project-img" src="img/works/05.jpg" alt="" />
+              <div class="project-mask">
+                <div class="project-caption">
+                  <h5 class="white">Cosmic Sea</h5>
+                  <p class="white">UI/UX Design, Web Development</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div
+            class="project-box"
+            data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-out"
+            data-aos-delay="1500"
+            data-aos-duration="1000"
+          >
+            <a href="#!">
+              <img class="project-img" src="img/works/06.jpg" alt="" />
+              <div class="project-mask">
+                <div class="project-caption">
+                  <h5 class="white">eCommerce</h5>
+                  <p class="white">Web Development</p>
                 </div>
               </div>
             </a>
           </div>
         </div>
-
-        <!-- 如果你想保留原来的 Works，把上面的商品区放前面，原 Works 重命名为 “更多商品/展示” 即可 -->
       </div>
     </section>
 
-    <!-- CONTACT：联系店主 -->
     <section id="contact" class="contact">
       <div class="container">
-        <h2 class="title">联系店主</h2>
-        <p class="contact-content">
-          有其他想要的饮料或零食？可以直接微信告诉我。
-        </p>
-        <p class="contact-content">
-          微信号：<strong>你的微信号</strong>
-        </p>
+        <div class="contact-title">
+          <h2 class="title">Contact</h2>
+        </div>
+        <div class="contact-content">
+          <p>
+            Tell me about your project.
+            <br />
+            Let's talk and work together!
+          </p>
+        </div>
 
-        <!-- 原来是发邮件，这里保留但可以不填 -->
-        <form
-          method="POST"
-          action="mail.php"
-          class="contact-form"
-          autocomplete="off"
-        >
+        <form class="contactForm" data-aos="zoom-in" data-aos-duration="1000">
           <div class="input-box">
+            <input type="text" name="name" placeholder="Name" required />
             <input
-              type="text"
-              name="name"
-              placeholder="你的称呼（可不填）"
+              type="email"
+              name="email"
+              placeholder="Email Address"
+              required
             />
           </div>
+
           <textarea
             name="message"
+            id=""
             cols="30"
-            rows="6"
-            placeholder="你也可以留个建议，比如：加冰红茶、加泡面等"
+            rows="10"
+            placeholder="Your Message"
+            required
           ></textarea>
-
-          <button type="submit" class="btn btn-red contact-button">
-            提交建议
-          </button>
+          <div
+            class="contact-button"
+            data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-out"
+            data-aos-delay="500"
+            data-aos-duration="1000"
+          >
+            <button href="#!" class="btn btn-red" name="submit" type="submit">
+              Send Message
+            </button>
+          </div>
         </form>
+        <div class="response"></div>
       </div>
     </section>
 
     <footer class="footer">
       <div class="container">
         <div class="footer-row">
-          <div class="footer-social">
-            <a href="#home">
+          <div class="social-links-row footer-social">
+            <a href="#!">
               <img
-                src="img/social_icons/wechat.svg"
-                alt="WeChat"
+                src="img/social_icons/github.svg"
+                alt="Link to GitHub account"
               />
             </a>
+
+            <a href="#!">
+              <img
+                src="img/social_icons/linkedin.svg"
+                alt="Link to linkedin profile"
+              />
+            </a>
+
+            <a href="#!">
+              <img src="img/social_icons/xing.svg" alt="Link to Xing profile" />
+            </a>
+
+            <a href="#!">
+              <img
+                src="img/social_icons/facebook.svg"
+                alt="Link to facebook profile"
+            /></a>
+
+            <a href="#!">
+              <img
+                src="img/social_icons/instagram.svg"
+                alt="Link to instagram profile"
+            /></a>
           </div>
-          <p class="footeropyright">
-            © <span id="year"></span> WiFi 便利店 · 连接网络 · 连接零食
-          </p>
+
+          <div class="footer-copyright">
+            <p>&copy; Copyright John Sample 2024</p>
+          </div>
         </div>
       </div>
     </footer>
 
-    <!-- JS：AOS 用官方 CDN，main.js 保持 -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="js/main.js"></script>
+    <div id="goToTop" class="goToTop">
+      <a href="#home">
+        <img src="img/icons/arrow_up.svg" alt="Back to top"
+      /></a>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+      integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script type="module" src="js/main.js"></script>
   </body>
 </html>
