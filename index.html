@@ -1,74 +1,355 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>免费WiFi | 矿泉水零食自助购买</title>
-  <!-- 原有 CSS/JS 链接保持不变 -->
-  <link href="main.css" rel="stylesheet">
-  <link href="media.css" rel="stylesheet">
-</head>
-<body>
-  <!-- Navbar 改标题 -->
-  <nav class="navbar sticky">
-    <div class="container">
-      <a href="#" class="navbar-brand">
-        <span class="text-danger">WiFi</span>便利店
-      </a>
-      <button class="navbar-toggler" id="navbar-toggle">
-        <span class="bi bi-list"></span>
-      </button>
-      <ul class="navbar-nav" id="navbar-nav">
-        <li><a href="#hero">首页</a></li>
-        <li><a href="#products">商品</a></li>
-        <li><a href="#about">关于</a></li>
-        <li><a href="#contact">联系</a></li>
-      </ul>
-    </div>
-  </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>免费 WiFi · 矿泉水零食自助购买</title>
+    <link rel="icon" href="img/favicon.png" />
+    <!-- 样式保持原结构 -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/media.css" />
+  </head>
 
-  <!-- Hero: WiFi + 购买 -->
-  <section id="hero" class="hero section dark-bg">
-    <div class="container section-title" data-aos="fade-up">
-      <h2>免费 WiFi</h2>
-      <p class="wifi-password" style="font-size: 3em; color: #fff; background: #000; padding: 20px; border-radius: 10px;">WiFi密码: 12345678</p>
-      <p>喝瓶矿泉水，吃点零食，继续上网吧！微信扫码购买</p>
+  <body>
+    <!-- 预加载：保持原逻辑 -->
+    <div id="preloader">
+      <div class="jumping-dots">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
-    <div class="container">
-      <div class="row gy-4">
-        <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
-          <div class="content">
-            <h3 data-aos="fade-up" data-aos-delay="100">自助售卖</h3>
-            <p data-aos="fade-up" data-aos-delay="200">农夫山泉矿泉水 ¥3<br>各种零食 ¥5-15<br>微信支付，秒发货</p>
-            <div class="social-links d-flex" data-aos="fade-up" data-aos-delay="300">
-              <a href="https://wa.me/你的微信号?text=我要买矿泉水" class="social-link">立即购买</a>
+
+    <!-- 返回顶部按钮 -->
+    <div class="goToTop" id="goToTop">
+      <a href="#home">
+        <img src="img/icons/arrow-up.svg" alt="Go to top" />
+      </a>
+    </div>
+
+    <!-- HEADER 保留原结构，改文案 -->
+    <header class="header" id="header">
+      <div class="header-nav container container-lg">
+        <a href="#home" class="logo">WiFi 便利店</a>
+
+        <nav id="nav" class="nav">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="#home" class="nav-link active">首页</a>
+            </li>
+            <li class="nav-item">
+              <a href="#products" class="nav-link">商品</a>
+            </li>
+            <li class="nav-item">
+              <a href="#about" class="nav-link">关于</a>
+            </li>
+            <li class="nav-item">
+              <a href="#contact" class="nav-link">联系</a>
+            </li>
+          </ul>
+        </nav>
+
+        <button class="nav-btn" id="nav-btn" aria-label="Toggle navigation">
+          <img src="img/icons/menu.svg" alt="Open menu" id="nav-btn-open" />
+          <img src="img/icons/close.svg" alt="Close menu" id="nav-btn-close" />
+        </button>
+      </div>
+    </header>
+
+    <!-- HERO：WiFi + 主推商品区 -->
+    <section id="home" class="hero">
+      <div class="container container-lg">
+        <div
+          class="hero-row"
+          data-aos="fade-zoom-in"
+          data-aos-easing="ease-in-out"
+          data-aos-delay="500"
+          data-aos-duration="1000"
+        >
+          <div class="hero-content">
+            <p class="hero-greeting">欢迎使用免费 WiFi</p>
+            <h1 class="hero-heading">
+              <span>WiFi 密码：</span>
+              <span class="wifi-password">12345678</span>
+            </h1>
+            <p class="hero-heading-subtitle">
+              一边上网，一边喝冰水、吃零食。微信扫码即可购买，店主马上送到你座位。
+            </p>
+
+            <div class="social-links-row">
+              <!-- 这里放一个“微信购买”按钮 -->
+              <a
+                href="weixin://dl/chat?你的微信号"
+                class="social-link"
+              >
+                微信联系客服购买
+              </a>
+            </div>
+
+            <div class="about-social-list">
+              <p>推荐：农夫山泉、怡宝、薯片、巧克力 等。</p>
+            </div>
+          </div>
+
+          <div class="hero-img">
+            <!-- 这张是你自己的展示图，放在 images/ 下 -->
+            <img
+              src="images/wifi-store.jpg"
+              alt="WiFi便利店"
+              width="480"
+              height="480"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT：改为店铺简介 -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2 class="title">关于 WiFi 便利店</h2>
+
+        <div class="about-row">
+          <div class="about-col">
+            <p class="about-descr">
+              这里是你的私人小卖部：提供冰镇矿泉水、各类零食，支持微信支付。你只需要通过页面下单，我们会尽快送到你桌上。
+            </p>
+            <p class="about-descr">
+              适合自习室、办公室、网咖、培训班等场景：用户连接 WiFi 后，自动跳转到这个页面，一键下单即可。
+            </p>
+            <a href="#products" class="btn btn-red about-download-btn">
+              查看全部商品
+            </a>
+          </div>
+
+          <div class="about-col">
+            <div class="skill">
+              <p class="skill-title">矿泉水供应</p>
+              <p class="skill-percent">100%</p>
+              <div class="skill-bar__progress">
+                <div class="skill-bar__fill" style="width: 100%"></div>
+              </div>
+            </div>
+
+            <div class="skill">
+              <p class="skill-title">零食种类</p>
+              <p class="skill-percent">80%</p>
+              <div class="skill-bar__progress">
+                <div class="skill-bar__fill" style="width: 80%"></div>
+              </div>
+            </div>
+
+            <div class="skill">
+              <p class="skill-title">平均送货时间</p>
+              <p class="skill-percent">&lt; 3 分钟</p>
+              <div class="skill-bar__progress">
+                <div class="skill-bar__fill" style="width: 90%"></div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="400">
-          <img src="images/wifi-store.jpg" class="img-fluid animated" alt="便利店">
+
+        <!-- Services：用来展示场景说明 -->
+        <div class="services-row">
+          <div class="service-card">
+            <img
+              src="img/services/coffee.svg"
+              alt=""
+              class="service-card-img"
+            />
+            <h3 class="service-card-title">自习室/培训班</h3>
+            <p>学生扫码连 WiFi 自动看到售卖页，老师不用分心卖水收钱。</p>
+          </div>
+          <div class="service-card">
+            <img
+              src="img/services/design.svg"
+              alt=""
+              class="service-card-img"
+            />
+            <h3 class="service-card-title">办公室</h3>
+            <p>同事口渴、嘴馋，打开 WiFi 页就能下单，解决临时口粮问题。</p>
+          </div>
+          <div class="service-card">
+            <img
+              src="img/services/website.svg"
+              alt=""
+              class="service-card-img"
+            />
+            <h3 class="service-card-title">网咖/电竞</h3>
+            <p>游戏中不想走开，用手机扫码下单，饮料零食送到机位。</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Products: 商品 -->
-  <section id="products" class="projects section light-bg">
-    <div class="container section-title" data-aos="fade-up">
-      <h2>商品列表</h2>
-      <p>扫码微信购买，店主马上发货</p>
-    </div>
-    <div class="container" data-aos="fade-up" data-aos-delay="100">
-      <ul id="project-filters" class="nav nav-filters justify-content-center">
-        <li class="nav-item"><a class="nav-link active" href="#" data-filter="*">全部</a></li>
-        <li class="nav-item"><a class="nav-link" href="#" data-filter=".water">矿泉水</a></li>
-        <li class="nav-item"><a class="nav-link" href="#" data-filter=".snack">零食</a></li>
-      </ul>
-      <div class="row project-gallery gy-4">
-        <!-- 矿泉水1 -->
-        <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up">
-          <div class="project-item filter-water">
-            <img src="images/shuijingshui1.jpg" class="img-fluid" alt="">
-            <div class="project-links">
-              <a href="images/shuijingshui1.jpg" data-gallery="portfolio-gallery" class="portfolio-link" title="放大看"><i class="bi bi-eye"></i></a>
-              <a href="h
+    <!-- PRODUCTS：商品展示（全部使用 images/，不动原 img/） -->
+    <section id="products" class="projects">
+      <div class="container container-lg">
+        <div class="projects-title">
+          <h2 class="title">商品列表</h2>
+        </div>
+
+        <div class="projects-row">
+          <!-- 商品 1：农夫山泉 -->
+          <div class="project-box">
+            <a href="images/shuijingshui1.jpg">
+              <img
+                class="project-img"
+                src="images/shuijingshui1.jpg"
+                alt="农夫山泉"
+              />
+              <div class="project-mask">
+                <div class="project-caption">
+                  <h5 class="white">农夫山泉矿泉水</h5>
+                  <p>550ml 冰镇 · ¥3</p>
+                  <a
+                    href="weixin://dl/chat?你的微信号"
+                    class="btn btn-red"
+                    style="margin-top: 10px"
+                    >微信购买</a
+                  >
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- 商品 2：怡宝 -->
+          <div class="project-box">
+            <a href="images/shuijingshui2.jpg">
+              <img
+                class="project-img"
+                src="images/shuijingshui2.jpg"
+                alt="怡宝"
+              />
+              <div class="project-mask">
+                <div class="project-caption">
+                  <h5 class="white">怡宝矿泉水</h5>
+                  <p>500ml 常温 · ¥3</p>
+                  <a
+                    href="weixin://dl/chat?你的微信号"
+                    class="btn btn-red"
+                    style="margin-top: 10px"
+                    >微信购买</a
+                  >
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- 商品 3：薯片 -->
+          <div class="project-box">
+            <a href="images/lingshi1.jpg">
+              <img
+                class="project-img"
+                src="images/lingshi1.jpg"
+                alt="薯片"
+              />
+              <div class="project-mask">
+                <div class="project-caption">
+                  <h5 class="white">乐事薯片</h5>
+                  <p>原味 60g · ¥8</p>
+                  <a
+                    href="weixin://dl/chat?你的微信号"
+                    class="btn btn-red"
+                    style="margin-top: 10px"
+                    >微信购买</a
+                  >
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- 商品 4：巧克力 -->
+          <div class="project-box">
+            <a href="images/lingshi2.jpg">
+              <img
+                class="project-img"
+                src="images/lingshi2.jpg"
+                alt="巧克力"
+              />
+              <div class="project-mask">
+                <div class="project-caption">
+                  <h5 class="white">德芙巧克力</h5>
+                  <p>牛奶味 40g · ¥12</p>
+                  <a
+                    href="weixin://dl/chat?你的微信号"
+                    class="btn btn-red"
+                    style="margin-top: 10px"
+                    >微信购买</a
+                  >
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- 如果你想保留原来的 Works，把上面的商品区放前面，原 Works 重命名为 “更多商品/展示” 即可 -->
+      </div>
+    </section>
+
+    <!-- CONTACT：联系店主 -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2 class="title">联系店主</h2>
+        <p class="contact-content">
+          有其他想要的饮料或零食？可以直接微信告诉我。
+        </p>
+        <p class="contact-content">
+          微信号：<strong>你的微信号</strong>
+        </p>
+
+        <!-- 原来是发邮件，这里保留但可以不填 -->
+        <form
+          method="POST"
+          action="mail.php"
+          class="contact-form"
+          autocomplete="off"
+        >
+          <div class="input-box">
+            <input
+              type="text"
+              name="name"
+              placeholder="你的称呼（可不填）"
+            />
+          </div>
+          <textarea
+            name="message"
+            cols="30"
+            rows="6"
+            placeholder="你也可以留个建议，比如：加冰红茶、加泡面等"
+          ></textarea>
+
+          <button type="submit" class="btn btn-red contact-button">
+            提交建议
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-row">
+          <div class="footer-social">
+            <a href="#home">
+              <img
+                src="img/social_icons/wechat.svg"
+                alt="WeChat"
+              />
+            </a>
+          </div>
+          <p class="footeropyright">
+            © <span id="year"></span> WiFi 便利店 · 连接网络 · 连接零食
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JS 保持原样 -->
+    <script src="js/aos.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
