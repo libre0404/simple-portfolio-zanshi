@@ -9,40 +9,31 @@
     <link rel="stylesheet" href="css/media.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <style>
-      /* 额外增加的价格醒目样式 */
-      .price-tag {
-        font-size: 24px;
-        color: #ffeb3b !important; /* 明亮的黄色 */
-        font-weight: 700;
-        margin-top: 5px;
-      }
+      .price-tag { font-size: 24px; color: #ffeb3b !important; font-weight: 700; margin-top: 5px; }
       .hero { padding-top: 120px; padding-bottom: 60px; }
-      .project-mask { background: rgba(0, 0, 0, 0.5) !important; } /* 让遮罩半透明透明，方便看清图片 */
+      .project-mask { background: rgba(0, 0, 0, 0.5) !important; }
 
-      /* 新增：扫码支付区域样式 */
-      .pay-box {
-        text-align: center;
-        padding: 60px 20px;
-        background-color: #fff;
+      /* 自助缴费区域 */
+      .pay-box { text-align: center; padding: 60px 20px; background-color: #f7fbfd; }
+      .qr-wrapper { display: inline-block; padding: 15px; border: 1px solid #eee; border-radius: 10px; background: #fff; margin-top: 20px; }
+      .qr-code { width: 220px; height: 220px; display: block; }
+      .pay-tip { margin-top: 15px; font-weight: bold; color: #e63946; }
+
+      /* 微信名片弹窗样式 */
+      .modal {
+        display: none; position: fixed; z-index: 10000; left: 0; top: 0;
+        width: 100%; height: 100%; background-color: rgba(0,0,0,0.8);
       }
-      .qr-wrapper {
-        display: inline-block;
-        padding: 15px;
-        border: 1px solid #eee;
-        border-radius: 10px;
-        background: #fdfdfd;
-        margin-top: 20px;
+      .modal-content {
+        background-color: #fff; margin: 15% auto; padding: 20px;
+        border-radius: 15px; width: 80%; max-width: 320px; text-align: center;
+        position: relative;
       }
-      .qr-code {
-        width: 220px;
-        height: 220px;
-        display: block;
+      .close-btn {
+        position: absolute; right: 15px; top: 10px; color: #aaa;
+        font-size: 28px; font-weight: bold; cursor: pointer;
       }
-      .pay-tip {
-        margin-top: 15px;
-        font-weight: bold;
-        color: #e63946;
-      }
+      .wechat-qr { width: 100%; border-radius: 8px; margin: 15px 0; }
     </style>
   </head>
 
@@ -53,7 +44,7 @@
           <a href="#home" class="logo">旅途补给站</a>
           <nav id="nav" class="nav">
             <ul class="nav-list">
-              <li class="nav-item"><a href="#home" class="nav-link active">首页</a></li>
+              <li class="nav-item"><a href="#home" class="nav-link">首页</a></li>
               <li class="nav-item"><a href="#projects" class="nav-link">商品列表</a></li>
               <li class="nav-item"><a href="#pay" class="nav-link">自助缴费</a></li>
               <li class="nav-item"><a href="#contact" class="nav-link">联系司机</a></li>
@@ -84,69 +75,33 @@
         <div class="projects-title">
           <h2 class="title">精选好物</h2>
         </div>
-
         <div class="projects-row">
           <div class="project-box" data-aos="zoom-in">
-            <a href="#!">
-              <img class="project-img" src="img/works/water.jpg" alt="矿泉水" />
-              <div class="project-mask">
-                <div class="project-caption">
-                  <h5 class="white">冰露/农夫山泉</h5>
-                  <p class="price-tag">¥ 2.00</p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="project-box" data-aos="zoom-in" data-aos-delay="200">
-            <a href="#!">
-              <img class="project-img" src="img/works/tissue.jpg" alt="纸巾" />
-              <div class="project-mask">
-                <div class="project-caption">
-                  <h5 class="white">清风原木纯品抽纸</h5>
-                  <p class="price-tag">¥ 1.00</p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="project-box" data-aos="zoom-in" data-aos-delay="400">
-            <a href="#!">
-              <img class="project-img" src="img/works/cable.jpg" alt="充电线" />
-              <div class="project-mask">
-                <div class="project-caption">
-                  <h5 class="white">三合一快速充电线</h5>
-                  <p class="price-tag">¥ 15.00</p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="project-box" data-aos="zoom-in" data-aos-delay="600">
-            <a href="#!">
-              <img class="project-img" src="img/works/snack.jpg" alt="薄荷糖" />
-              <div class="project-mask">
-                <div class="project-caption">
-                  <h5 class="white">清凉薄荷糖 (提神)</h5>
-                  <p class="price-tag">¥ 5.00</p>
-                </div>
-              </div>
-            </a>
+            <img class="project-img" src="img/works/water.jpg" alt="水" />
+            <div class="project-mask"><div class="project-caption"><h5 class="white">矿泉水</h5><p class="price-tag">¥ 2.00</p></div></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="pay" class="pay-box">
-      <div class="container">
-        <h2 class="title" data-aos="fade-up">自助缴费</h2>
-        <p data-aos="fade-up">诚信经营，请长按下方二维码识别支付</p>
-        <div class="qr-wrapper" data-aos="zoom-in">
-          <img src="img/pay_code.png" alt="收款码" class="qr-code">
-        </div>
-        <p class="pay-tip" data-aos="fade-up">[ 支付后请告知司机自取 ]</p>
-      </div>
-    </section>
+	<section id="pay" class="pay-box">
+	  <div class="container">
+		<h2 class="title" data-aos="fade-up">自助缴费</h2>
+		
+		<div style="background: #fff9db; padding: 10px; border-radius: 8px; margin-bottom: 20px;" data-aos="fade-up">
+		   <p style="color: #856404; font-size: 14px;">
+			 💡 微信内访问：请<strong>长按下方二维码</strong>识别支付<br>
+			 💡 浏览器访问：请<strong>截图保存</strong>至相册，用微信扫一扫识别
+		   </p>
+		</div>
+
+		<div class="qr-wrapper" data-aos="zoom-in">
+		  <img src="img/pay_code.png" alt="收款码" class="qr-code">
+		</div>
+		
+		<p class="pay-tip" data-aos="fade-up">支付完成后请告知司机自取</p>
+	  </div>
+	</section>
 
     <section id="contact" class="contact">
       <div class="container">
@@ -158,24 +113,41 @@
           <p>或点击下方按钮添加微信</p>
         </div>
         <div style="margin-top: 20px;">
-           <a href="你的微信链接" class="btn btn-red">添加司机微信</a>
+           <button onclick="openWechat()" class="btn btn-red">添加司机微信</button>
         </div>
       </div>
     </section>
 
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-row">
-          <div class="footer-copyright">
-            <p>&copy; 2026 旅途补给站 | 诚意服务</p>
-          </div>
-        </div>
+    <div id="wechatModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeWechat()">&times;</span>
+        <h3 style="color: #333; margin-top: 10px;">添加司机微信</h3>
+        <p style="font-size: 14px; color: #666;">请长按识别下方二维码</p>
+        <img src="img/wechat_contact.png" alt="微信名片" class="wechat-qr">
+        <p style="font-size: 12px; color: #999;">欢迎咨询建议/找车预约</p>
       </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container"><div class="footer-row"><p>&copy; 2026 旅途补给站</p></div></div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
       AOS.init({ duration: 1000, once: true });
+
+      // 弹窗逻辑
+      function openWechat() {
+        document.getElementById("wechatModal").style.display = "block";
+      }
+      function closeWechat() {
+        document.getElementById("wechatModal").style.display = "none";
+      }
+      // 点击弹窗外部关闭
+      window.onclick = function(event) {
+        let modal = document.getElementById("wechatModal");
+        if (event.target == modal) { modal.style.display = "none"; }
+      }
     </script>
   </body>
 </html>
