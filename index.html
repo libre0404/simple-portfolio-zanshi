@@ -7,34 +7,20 @@
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/media.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    />
     <style>
-      /* 保持原版风格，仅微调价格标签 */
+      /* 额外增加的价格醒目样式 */
       .price-tag {
         font-size: 24px;
-        color: #ffeb3b !important;
+        color: #ffeb3b !important; /* 明亮的黄色 */
         font-weight: 700;
         margin-top: 5px;
       }
-      /* 自助缴费区域专用样式 */
-      .pay-section {
-        padding: 7rem 0;
-        text-align: center;
-        background-color: #fff; /* 与背景色区分 */
-      }
-      .qr-card {
-        display: inline-block;
-        padding: 20px;
-        background: #f7fbfd;
-        border: 1px solid #e9e8e8;
-        border-radius: 12px;
-        margin-top: 30px;
-      }
-      .qr-code {
-        width: 220px;
-        height: 220px;
-        display: block;
-      }
+      .hero { padding-top: 120px; padding-bottom: 60px; }
+      .project-mask { background: rgba(0, 0, 0, 0.5) !important; } /* 让遮罩半透明透明，方便看清图片 */
     </style>
   </head>
 
@@ -42,12 +28,12 @@
     <header id="header" class="header">
       <div class="container container-lg">
         <div class="header-nav">
-          <a href="#home" class="logo" data-aos="fade-down">旅途补给站</a>
+          <a href="#home" class="logo">旅途补给站</a>
           <nav id="nav" class="nav">
-            <ul class="nav-list" data-aos="fade-down">
+            <ul class="nav-list">
               <li class="nav-item"><a href="#home" class="nav-link active">首页</a></li>
-              <li class="nav-item"><a href="#projects" class="nav-link">价目表</a></li>
-              <li class="nav-item"><a href="#pay" class="nav-link">自助缴费</a></li>
+              <li class="nav-item"><a href="#projects" class="nav-link">商品列表</a></li>
+              <li class="nav-item"><a href="#contact" class="nav-link">联系司机</a></li>
             </ul>
           </nav>
         </div>
@@ -56,18 +42,14 @@
 
     <section id="home" class="hero">
       <div class="container container-lg">
-        <div class="hero-row" data-aos="fade-zoom-in">
+        <div class="hero-row" data-aos="fade-in">
           <div class="hero-content">
-            <span class="hero-greeting">Hello, 乘客朋友</span>
+            <span class="hero-greeting">你好，乘客朋友</span>
             <h1 class="hero-heading">补给小铺</h1>
             <span class="hero-heading-subtitle">长途漫漫，点份补给犒劳下自己吧。</span>
             <div style="margin-top: 30px;">
-              <a href="#projects" class="btn">查看所有商品</a>
-              <a href="#pay" class="btn btn-white">立即付账</a>
+              <a href="#projects" class="btn">查看价目表</a>
             </div>
-          </div>
-          <div class="hero-img">
-            <img src="img/hero/hero.png" alt="Hero Image" />
           </div>
         </div>
       </div>
@@ -76,39 +58,90 @@
     <section id="projects" class="projects">
       <div class="container container-lg">
         <div class="projects-title">
-          <h2 class="title" data-aos="fade-up">精选好物</h2>
+          <h2 class="title">精选好物</h2>
         </div>
 
         <div class="projects-row">
-          <div class="project-box" data-aos="fade-zoom-in">
-            <img class="project-img" src="img/works/01.jpg" alt="商品" />
-            <div class="project-mask">
-              <div class="project-caption">
-                <h5 class="white">农夫山泉/冰露</h5>
-                <p class="price-tag">¥ 2.00</p>
+          <div class="project-box" data-aos="zoom-in">
+            <a href="#!">
+              <img class="project-img" src="img/works/water.jpg" alt="矿泉水" />
+              <div class="project-mask">
+                <div class="project-caption">
+                  <h5 class="white">冰露/农夫山泉</h5>
+                  <p class="price-tag">¥ 2.00</p>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
-          <div class="project-box" data-aos="fade-zoom-in" data-aos-delay="300">
-            <img class="project-img" src="img/works/02.jpg" alt="商品" />
-            <div class="project-mask">
-              <div class="project-caption">
-                <h5 class="white">清风抽取式纸巾</h5>
-                <p class="price-tag">¥ 1.00</p>
+
+          <div class="project-box" data-aos="zoom-in" data-aos-delay="200">
+            <a href="#!">
+              <img class="project-img" src="img/works/tissue.jpg" alt="纸巾" />
+              <div class="project-mask">
+                <div class="project-caption">
+                  <h5 class="white">清风原木纯品抽纸</h5>
+                  <p class="price-tag">¥ 1.00</p>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
+
+          <div class="project-box" data-aos="zoom-in" data-aos-delay="400">
+            <a href="#!">
+              <img class="project-img" src="img/works/cable.jpg" alt="充电线" />
+              <div class="project-mask">
+                <div class="project-caption">
+                  <h5 class="white">三合一快速充电线</h5>
+                  <p class="price-tag">¥ 15.00</p>
+                </div>
+              </div>
+            </a>
           </div>
+
+          <div class="project-box" data-aos="zoom-in" data-aos-delay="600">
+            <a href="#!">
+              <img class="project-img" src="img/works/snack.jpg" alt="薄荷糖" />
+              <div class="project-mask">
+                <div class="project-caption">
+                  <h5 class="white">清凉薄荷糖 (提神)</h5>
+                  <p class="price-tag">¥ 5.00</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="contact-title">
+          <h2 class="title">联系司机</h2>
+        </div>
+        <div class="contact-content">
+          <p>如需购买，请直接在车内告知司机</p>
+          <p>或点击下方按钮添加微信</p>
+        </div>
+        <div style="margin-top: 20px;">
+           <a href="你的微信链接" class="btn btn-red">添加司机微信</a>
+        </div>
       </div>
     </section>
 
-    <section id="pay" class="pay-section">
+    <footer class="footer">
       <div class="container">
-        <div data-aos="fade-up">
-          <h2 class="title">自助缴费</h2>
-          <p class="contact-content">诚信经营，选好商品后请长按下方二维码识别支付</p>
+        <div class="footer-row">
+          <div class="footer-copyright">
+            <p>&copy; 2026 旅途补给站 | 诚意服务</p>
+          </div>
         </div>
-        
-        <div class="qr-card" data-aos="zoom-in" data-aos-delay="200">
-          <img src="img/pay_code.png" alt="微信支付二维码" class="qr-code" />
-          <p style="margin-top: 15px; color: #e6
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+      AOS.init(); // 初始化动画
+    </script>
+  </body>
+</html>
