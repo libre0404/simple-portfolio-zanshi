@@ -7,10 +7,7 @@
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/media.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <style>
       /* 额外增加的价格醒目样式 */
       .price-tag {
@@ -21,6 +18,31 @@
       }
       .hero { padding-top: 120px; padding-bottom: 60px; }
       .project-mask { background: rgba(0, 0, 0, 0.5) !important; } /* 让遮罩半透明透明，方便看清图片 */
+
+      /* 新增：扫码支付区域样式 */
+      .pay-box {
+        text-align: center;
+        padding: 60px 20px;
+        background-color: #fff;
+      }
+      .qr-wrapper {
+        display: inline-block;
+        padding: 15px;
+        border: 1px solid #eee;
+        border-radius: 10px;
+        background: #fdfdfd;
+        margin-top: 20px;
+      }
+      .qr-code {
+        width: 220px;
+        height: 220px;
+        display: block;
+      }
+      .pay-tip {
+        margin-top: 15px;
+        font-weight: bold;
+        color: #e63946;
+      }
     </style>
   </head>
 
@@ -33,6 +55,7 @@
             <ul class="nav-list">
               <li class="nav-item"><a href="#home" class="nav-link active">首页</a></li>
               <li class="nav-item"><a href="#projects" class="nav-link">商品列表</a></li>
+              <li class="nav-item"><a href="#pay" class="nav-link">自助缴费</a></li>
               <li class="nav-item"><a href="#contact" class="nav-link">联系司机</a></li>
             </ul>
           </nav>
@@ -49,6 +72,7 @@
             <span class="hero-heading-subtitle">长途漫漫，点份补给犒劳下自己吧。</span>
             <div style="margin-top: 30px;">
               <a href="#projects" class="btn">查看价目表</a>
+              <a href="#pay" class="btn btn-white">立即支付</a>
             </div>
           </div>
         </div>
@@ -112,7 +136,17 @@
         </div>
       </div>
     </section>
-    
+
+    <section id="pay" class="pay-box">
+      <div class="container">
+        <h2 class="title" data-aos="fade-up">自助缴费</h2>
+        <p data-aos="fade-up">诚信经营，请长按下方二维码识别支付</p>
+        <div class="qr-wrapper" data-aos="zoom-in">
+          <img src="img/pay_code.png" alt="收款码" class="qr-code">
+        </div>
+        <p class="pay-tip" data-aos="fade-up">[ 支付后请告知司机自取 ]</p>
+      </div>
+    </section>
 
     <section id="contact" class="contact">
       <div class="container">
@@ -141,7 +175,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-      AOS.init(); // 初始化动画
+      AOS.init({ duration: 1000, once: true });
     </script>
   </body>
 </html>
